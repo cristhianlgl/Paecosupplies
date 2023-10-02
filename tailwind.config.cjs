@@ -16,7 +16,9 @@ module.exports = {
 					900: '#142C49',
 				},
 				"mint-green" : "#A5EFB6",
-				"dark-blue" : "#344F6F"
+				"dark-blue" : "#344F6F",
+				"pale-green" : "#DBE2EF",
+				"very-pale-green" : "#E8F6EF"
 			},
 			fontFamily: {
 				'vietnam': ['Be Vietnam Pro','sans-serif'],
