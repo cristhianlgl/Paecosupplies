@@ -17,11 +17,11 @@ module.exports = {
 				},
 				"mint-green" : "#A5EFB6",
 				"dark-blue" : "#344F6F",
-				"pale-green" : "#DBE2EF",
+				"pale-blue" : "#DBE2EF",
 				"very-pale-green" : "#E8F6EF"
 			},
 			fontFamily: {
-				'vietnam': ['Be Vietnam Pro','sans-serif'],
+				'raleway': ['Raleway','sans-serif'],
 			},
 			backgroundImage: {
 				'hamburger-icon': "url('/images/icon-hamburger.svg')",
