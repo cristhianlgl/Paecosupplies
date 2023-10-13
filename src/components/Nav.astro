@@ -1,12 +1,22 @@
 ---
+interface Props  {
+  inEnglish : boolean
+}
+
+const { inEnglish = true } = Astro.props;
+
 import LinkNav from "./LinkNav.astro";
-
 import products from "../data/products.json";
-const links = [...new Set(products.map((product) => product.category))];
-links.unshift('ABOUT');
-links.push('CONTACT'); 
-
-
+let links;
+if (inEnglish) {
+  links = [...new Set(products.map((product) => product.categoryEN))];
+  links.unshift('ABOUT');
+  links.push('CONTACT'); 
+} else {
+  links = [...new Set(products.map((product) => product.categoryES.toUpperCase()))];
+  links.unshift('NOSOTROS');
+  links.push('CONTACTO'); 
+}
 ---
 <nav class="bg-ocean-blue-500 fixed w-full z-20 top-0 left-0 shadow-lg text-very-pale-green">
     <div class="w-[90%] max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 md:grid md:grid-cols-[80%_auto] md:gap-y-2">
@@ -15,7 +25,7 @@ links.push('CONTACT');
         <span class="self-center text-2xl z-20 text-white font-semibold whitespace-nowrap">P&A Eco Supplies</span>
     </a>
     <div class="text-end font-bold">
-      <a class="underline" href="">En</a> / <a class="hover:underline" href="">Es</a>
+      <a class="underline" href="/">En</a> / <a class="hover:underline" href="/es/index.html">Es</a>
     </div>
     <input class="peer hidden" type="checkbox" id="menu">
     <label class="bg-hamburger-icon w-6 h-5 bg-cover bg-center cursor-pointer peer-checked:bg-close-icon transition-all z-50 md:hidden" for="menu"></label>
